@@ -1,0 +1,24 @@
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-footer {
+  padding: 0px 16px;
+  height: 48px;
+  line-height: 48px;
+}
+
+.ant-layout-header {
+  background: #fff;
+}
+
+.ant-layout-content {
+  margin: 0px 16px;
+}
+
+.ant-breadcrumb {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
