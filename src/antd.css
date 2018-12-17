@@ -26,23 +26,15 @@
   display: none;
 }
 
-.ant-menu-inline-collapsed .ant-menu-item i {
-  position: relative;
-}
-
-.ant-menu-inline-collapsed .ant-menu-item span {
-  visibility: hidden;
-}
-
 .ant-menu-item-header {
   background: #414243;
 }
 
 .ant-menu-item-header:hover {
-  cursor: default;
+  cursor: unset;
 }
 
-.ant-menu-item-header span {
+.ant-menu-item-header * {
   color: wheat;
 }
 

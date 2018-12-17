@@ -77,4 +77,4 @@ export default [
     url: '/ticket',
     icon: 'tags',
   },
-]
+];

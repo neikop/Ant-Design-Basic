@@ -1,7 +1,7 @@
-import React, {Component, Fragment} from 'react'
-import {withRouter, Link} from 'react-router-dom'
-import {Menu, Icon} from 'antd'
-import navigator from 'navigator'
+import React, {Component, Fragment} from 'react';
+import {withRouter, Link} from 'react-router-dom';
+import {Menu, Icon} from 'antd';
+import navigator from 'navigator';
 
 const readMenu = (items) =>
   // eslint-disable-next-line
@@ -11,7 +11,7 @@ const readMenu = (items) =>
         <Menu.Item key={item.name} className='ant-menu-item-header'>
           <span>{item.name}</span>
         </Menu.Item>
-      )
+      );
     if (item.children)
       return (
         <Menu.SubMenu
@@ -24,7 +24,7 @@ const readMenu = (items) =>
           }>
           {readMenu(item.children)}
         </Menu.SubMenu>
-      )
+      );
     if (item.url)
       return (
         <Menu.Item key={item.url}>
@@ -33,36 +33,37 @@ const readMenu = (items) =>
             <span>{item.name}</span>
           </Link>
         </Menu.Item>
-      )
-  })
+      );
+  });
 
 class MenuX extends Component {
-  constructor() {
-    super()
-    this.state = {}
-  }
-
-  onOpenChange = (openKeys) => {
-    console.log(openKeys)
-    this.setState({openKeys})
+  constructor(props) {
+    super(props);
+    this.state = {
+      openKeys: props.location.pathname.split('/'),
+    };
   }
 
   render() {
-    const {location} = this.props
+    const {location} = this.props;
     const selecter = location.pathname.split('/').map((_, last) =>
       location.pathname
         .split('/')
         .filter((_, index) => index <= last)
         .join('/'),
-    )
-    const opener = location.pathname.split('/').concat(this.state.openKeys)
+    );
 
     return (
-      <Menu theme='dark' mode='inline' selectedKeys={selecter} openKeys={opener} onOpenChange={this.onOpenChange}>
+      <Menu
+        theme='dark'
+        mode='inline'
+        selectedKeys={selecter}
+        openKeys={this.state.openKeys}
+        onOpenChange={(openKeys) => this.setState({openKeys})}>
         {readMenu(navigator.menu)}
       </Menu>
-    )
+    );
   }
 }
 
-export default withRouter(MenuX)
+export default withRouter(MenuX);
