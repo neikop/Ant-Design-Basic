@@ -26,7 +26,7 @@ export default [
       {
         name: 'Script',
         sub: 'script',
-        icon: 'pie-chart',
+        icon: 'copy',
         children: [
           {
             name: 'Question',
