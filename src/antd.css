@@ -1,3 +1,4 @@
+/* ANTD - LAYOUT */
 .ant-layout {
   min-height: 100vh;
 }
@@ -22,24 +23,25 @@
   margin: 4px 0px;
 }
 
-.ant-menu-inline-collapsed .ant-menu-item-header {
-  display: none;
+/* MENU - TITLE ITEM */
+.ant-menu-inline-collapsed .ant-menu-item-group-title {
+  height: 2px;
+  padding: 0px;
+  background: orange;
 }
 
-.ant-menu-item-header {
-  background: #414243;
+.ant-menu-item-group-title {
+  color: orange !important;
+  font-weight: 600;
+  transition: none;
 }
 
-.ant-menu-item-header:hover {
-  cursor: unset;
-}
-
-.ant-menu-item-header * {
-  color: wheat;
+/* PADDING - MARGIN */
+.ant-menu-submenu {
+  padding-bottom: 0px !important;
 }
 
 .ant-menu-submenu-title {
-  background: #182230;
   margin-bottom: 0px !important;
 }
 
@@ -47,8 +49,17 @@
   margin: 4px 0px !important;
 }
 
+.ant-menu-item-group-title {
+  margin: 4px 0px !important;
+}
+
+/* BACKGROUND COLOR */
 .ant-menu li:hover {
   background: #123456 !important;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-submenu-title {
+  background: #0f1f2f;
 }
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected {

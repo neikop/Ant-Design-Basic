@@ -1,5 +1,5 @@
 import menu from './menu';
 
-export default {
+export const navigator = {
   menu,
 };

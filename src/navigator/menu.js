@@ -10,7 +10,7 @@ export default [
   },
   {
     name: 'Campaign',
-    sub: 'campaign',
+    url: '/campaign',
     icon: 'windows',
     children: [
       {
@@ -25,7 +25,7 @@ export default [
       },
       {
         name: 'Script',
-        sub: 'script',
+        url: '/campaign/script',
         icon: 'copy',
         children: [
           {
@@ -44,7 +44,7 @@ export default [
   },
   {
     name: 'Report',
-    sub: 'report',
+    url: '/report',
     children: [
       {
         name: 'Process',
