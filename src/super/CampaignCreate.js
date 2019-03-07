@@ -7,7 +7,7 @@ class Router extends Component {
   }
 
   render() {
-    return <Fragment>1</Fragment>;
+    return <Fragment>Create Campaign</Fragment>;
   }
 }
 

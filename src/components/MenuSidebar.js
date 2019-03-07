@@ -38,7 +38,7 @@ class BasicMenu extends Component {
     const selecter = selector.map((_, last) => selector.filter((_, index) => index <= last).join('/')).filter((i) => i);
 
     return (
-      <Menu theme='dark' mode='inline' defaultSelectedKeys={selecter} defaultOpenKeys={selecter}>
+      <Menu theme='dark' mode='inline' selectedKeys={selecter} defaultOpenKeys={selecter}>
         {MenuReader(navigator.menu)}
       </Menu>
     );

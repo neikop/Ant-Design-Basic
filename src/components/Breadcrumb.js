@@ -15,13 +15,15 @@ const breadcrumber = (items) => {
 class BasicBreadcrumb extends Component {
   render() {
     const {location} = this.props;
-    const selector = location.pathname.split('/');
-    const selecter = selector.map((_, last) => selector.filter((_, index) => index <= last).join('/')).filter((i) => i);
+
+    let selector = location.pathname.split('/');
+    selector = selector.map((_, last) => selector.filter((_, index) => index <= last).join('/')).filter((i) => i);
+    if (!selector.includes('/home')) selector = ['/home'].concat(selector);
 
     const breadcrumbItems = breadcrumber(navigator.menu);
     return (
       <Breadcrumb separator='>'>
-        {selecter.map((url) => (
+        {selector.map((url) => (
           <Breadcrumb.Item key={url}>
             <Link to={url}>{breadcrumbItems[url]}</Link>
           </Breadcrumb.Item>
