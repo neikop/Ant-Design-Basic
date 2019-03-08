@@ -1,9 +1,9 @@
+import Home from 'super/Home';
 import CampaignCreate from 'super/CampaignCreate';
 import CampaignScript from 'super/CampaignScript';
 import CampaignScriptQuestion from 'super/CampaignScriptQuestion';
-import Customer from 'super/Customer';
 import Report from 'super/Report';
-import Home from 'super/Home';
+import Customer from 'super/Customer';
 
 export default [
   {
