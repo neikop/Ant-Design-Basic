@@ -3,10 +3,10 @@ import {withRouter, Link} from 'react-router-dom';
 import {Breadcrumb} from 'antd';
 import {navigator} from 'navigator';
 
-const breadcrumber = (items) => {
+const MenuCrumber = (items) => {
   let ret = {};
   items.forEach((item) => {
-    if (item.children) ret = {...ret, ...breadcrumber(item.children)};
+    if (item.children) ret = {...ret, ...MenuCrumber(item.children)};
     if (item.url) ret[item.url] = item.name;
   });
   return ret;
@@ -20,14 +20,16 @@ class BasicBreadcrumb extends Component {
     selector = selector.map((_, last) => selector.filter((_, index) => index <= last).join('/')).filter((i) => i);
     if (!selector.includes('/home')) selector = ['/home'].concat(selector);
 
-    const breadcrumbItems = breadcrumber(navigator.menu);
+    const allCrumber = MenuCrumber(navigator.menu);
     return (
       <Breadcrumb separator='>'>
-        {selector.map((url) => (
-          <Breadcrumb.Item key={url}>
-            <Link to={url}>{breadcrumbItems[url]}</Link>
-          </Breadcrumb.Item>
-        ))}
+        {selector
+          .filter((url) => allCrumber[url])
+          .map((url) => (
+            <Breadcrumb.Item key={url}>
+              <Link to={url}>{allCrumber[url]}</Link>
+            </Breadcrumb.Item>
+          ))}
       </Breadcrumb>
     );
   }

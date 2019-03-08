@@ -1,42 +1,53 @@
+import CampaignCreate from 'super/CampaignCreate';
+import CampaignScript from 'super/CampaignScript';
+import CampaignScriptQuestion from 'super/CampaignScriptQuestion';
+import Customer from 'super/Customer';
+import Report from 'super/Report';
+import Home from 'super/Home';
+
 export default [
   {
     name: 'Home',
-    url: '/home',
     icon: 'home',
+    url: '/home',
+    target: Home,
   },
   {
-    title: true,
+    title: 1,
     name: 'In Bound',
   },
   {
     name: 'Campaign',
-    url: '/campaign',
     icon: 'windows',
+    url: '/campaign',
     children: [
       {
         name: 'Create',
-        url: '/campaign/create',
         icon: 'plus-circle',
+        url: '/campaign/create',
+        target: CampaignCreate,
       },
       {
         name: 'Schedule',
-        url: '/campaign/schedule',
         icon: 'schedule',
+        url: '/campaign/schedule',
       },
       {
         name: 'Script',
-        url: '/campaign/script',
         icon: 'copy',
+        url: '/campaign/script',
+        target: CampaignScript,
         children: [
           {
             name: 'Question',
-            url: '/campaign/script/question',
             icon: 'question-circle',
+            url: '/campaign/script/question',
+            target: CampaignScriptQuestion,
           },
           {
             name: 'Answer',
-            url: '/campaign/script/answer',
             icon: 'check-circle',
+            url: '/campaign/script/answer',
           },
         ],
       },
@@ -45,36 +56,38 @@ export default [
   {
     name: 'Report',
     url: '/report',
+    target: Report,
     children: [
       {
         name: 'Process',
-        url: '/report/process',
         icon: 'code',
+        url: '/report/process',
       },
       {
         name: 'Scope',
-        url: '/report/scope',
         icon: 'shake',
+        url: '/report/scope',
       },
       {
         name: 'Result',
-        url: '/report/result',
         icon: 'file-text',
+        url: '/report/result',
       },
     ],
   },
   {
-    title: true,
+    title: 1,
     name: 'Out Bound',
   },
   {
     name: 'Customer',
-    url: '/customer',
     icon: 'user',
+    url: '/customer',
+    target: Customer,
   },
   {
     name: 'Ticket',
-    url: '/ticket',
     icon: 'tags',
+    url: '/ticket',
   },
 ];

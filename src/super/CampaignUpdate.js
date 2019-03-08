@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import {Link} from 'react-router-dom';
 
 class Router extends Component {
   constructor() {
@@ -8,10 +7,11 @@ class Router extends Component {
   }
 
   render() {
+    const {id} = this.props.match.params;
     return (
       <Fragment>
-        Create Campaign
-        <Link to='/campaign/1/update'>Update</Link>
+        Update Campaign
+        <div>{id}</div>
       </Fragment>
     );
   }

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {withRouter, Switch, Route} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {Layout} from 'antd';
+import AppRouter from 'components/AppRouter';
 import MenuSidebar from 'components/MenuSidebar';
 import Breadcrumb from 'components/Breadcrumb';
-import {navigator} from 'navigator';
 
 import './App.css';
 
@@ -31,11 +31,7 @@ class App extends Component {
           <Header />
           <Content>
             <Breadcrumb />
-            <Switch>
-              {navigator.router.map((item, index) => (
-                <Route exact key={index} path={item.url} component={item.target} />
-              ))}
-            </Switch>
+            <AppRouter />
           </Content>
           <Footer>Ant Design Basic ©2019 Created by Neikop</Footer>
         </Layout>
