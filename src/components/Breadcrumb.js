@@ -20,7 +20,10 @@ class BasicBreadcrumb extends Component {
     selector = selector.map((_, last) => selector.filter((_, index) => index <= last).join('/')).filter((i) => i);
     if (!selector.includes('/home')) selector = ['/home'].concat(selector);
 
-    const allCrumber = MenuCrumber(navigator.menu);
+    const allCrumber = {
+      ...MenuCrumber(navigator.menu),
+      ...MenuCrumber(navigator.router),
+    };
     return (
       <Breadcrumb separator='>'>
         {selector
