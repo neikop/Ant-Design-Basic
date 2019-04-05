@@ -1,9 +1,26 @@
-.logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+* {
+  font-weight: 500;
 }
 
-* {
-  font-weight: 600;
+.logo {
+  height: 64px;
+  padding: 0 24px;
+  overflow: hidden;
+  line-height: 64px;
+  white-space: nowrap;
+}
+
+.logo > img {
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  margin-right: 24px;
+}
+
+.logo > span {
+  color: wheat;
+}
+
+.ant-layout-footer > code {
+  line-height: initial;
 }

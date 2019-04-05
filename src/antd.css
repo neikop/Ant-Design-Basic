@@ -32,7 +32,7 @@
 
 .ant-menu-item-group-title {
   color: orange !important;
-  font-weight: 600;
+  font-weight: 500;
   transition: none;
 }
 
@@ -68,4 +68,33 @@
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected:hover {
   background: dodgerblue !important;
+}
+
+.ant-layout-sider-dark .ant-layout-sider-trigger {
+  background: linear-gradient(#001529, #002140);
+}
+
+/* WIRD FORM */
+.ant-form-item-label {
+  display: block;
+  text-align: left;
+  line-height: unset;
+  padding: 0px;
+}
+
+.ant-form-item-required:before {
+  display: none;
+}
+
+.ant-form-item-required:after {
+  content: '✻' !important;
+  display: inline-block !important;
+  font-weight: normal;
+  color: orangered;
+}
+
+/* BUTTON */
+.ant-btn {
+  display: inline-flex;
+  align-items: center;
 }
